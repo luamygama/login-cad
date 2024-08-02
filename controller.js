@@ -23,10 +23,14 @@
 
         if(nomeUser){
             dadosLista.push(nomeUser);
-            console.log(dadosLista);
+            //console.log(dadosLista);
             document.getElementById("nomeUser").value = "";
-
         }else{
             alert("Favor informa o nome cadastrado");
         }
     }
+
+    //FUNCÃO PARA CRIAR LISTA
+function criarLista(){
+    
+}
