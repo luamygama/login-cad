@@ -24,7 +24,7 @@
         if(nomeUser){
             dadosLista.push(nomeUser);
             //console.log(dadosLista);
-            criarLista()
+            criarLista();
             document.getElementById("nomeUser").value = "";
         }else{
             alert("Favor informa o nome cadastrado");
@@ -33,7 +33,7 @@
 
     //FUNCÃO PARA CRIAR LISTA
 function criarLista(){
-    let tabela = document.getElementById("tabela"). innerHTML = "<tr><th> Nome Usuário</th></th>Ações</th></tr>";
+    let tabela = document.getElementById("tabela"). innerHTML = "<tr><th> Nome Usuário</th><th>Ações</th></tr>";
 
     for(let i = 0; i <= (dadosLista.length-1); i++){
         tabela += "<tr><td>" + dadosLista[i] + "</td><td></td></tr>";
@@ -42,3 +42,6 @@ function criarLista(){
         document.getElementById("tabela").innerHTML = tabela;
     }
 }
+
+//FUNÇAO PARA EDITAR NOMES DA LISTA
+function editar(){}
