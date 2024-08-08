@@ -36,7 +36,7 @@ function criarLista(){
     let tabela = document.getElementById("tabela"). innerHTML = "<tr><th> Nome Usuário</th><th>Ações</th></tr>";
 
     for(let i = 0; i <= (dadosLista.length-1); i++){
-        tabela += "<tr><td>" + dadosLista[i] + "</td><td></td></tr>";
+        tabela += "<tr><td>" + dadosLista[i] + "</td><td><button type='button'>Editar</td></tr>";
 
     //innerhtml guarda o nome da lista que foi armanezado
         document.getElementById("tabela").innerHTML = tabela;
@@ -44,4 +44,7 @@ function criarLista(){
 }
 
 //FUNÇAO PARA EDITAR NOMES DA LISTA
-function editar(){}
+function editar(i){
+    document.getElementById('nomeUser').value = dadosLista[(i-1)];
+    dadosLista.splice(dadosLista[(i - 1)], 1);
+}
