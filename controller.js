@@ -1,3 +1,4 @@
+
 // Função para validar o acesso na tela de login
 function acessar() {
     // Obtém os valores dos campos de email e senha
@@ -44,7 +45,7 @@ function criarLista() {
     // Itera sobre todos os nomes na lista de dados
     for (let i = 0; i <= (dadosLista.length - 1); i++) {
         // Adiciona uma nova linha para cada nome com um botão de editar
-        tabela += "<tr><td>" + dadosLista[i] + "</td><td><button type='button' onclick='editar(this.parentNode.parentNode.rowIndex)' class='btn-rosa'>Editar</button></td></tr>";
+        tabela += "<tr><td>" + dadosLista[i] + "</td><td><button type='button' onclick='editar(this.parentNode.parentNode.rowIndex)' class='btn-rosa'>Editar</button><button type='button' onclick='excluir(this.parentNode.parentNode.rowIndex)' class='btn-rosa'>excluir</button></td></tr>";
     }
 
     // Atualiza o conteúdo da tabela com a nova lista
@@ -55,8 +56,14 @@ function criarLista() {
 function editar(i) {
     // Preenche o campo de nome com o nome selecionado para edição
     document.getElementById('nomeUser').value = dadosLista[i - 1];
-    // Remove o nome da lista
+    // seleciona para a edição 
     dadosLista.splice(i - 1, 1);
     // Atualiza a lista exibida na tela após a remoção
     criarLista();
-}
+} 
+
+// Função para excluir um nome na lista
+    function excluir(i) {
+        dadosLista.splice((i -1), 1);
+        document.getElementById("tabela").deleteRow(i);
+    }
