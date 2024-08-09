@@ -58,7 +58,7 @@ excluir nomes citado na lista caso houver algum erro, ou nome que nao pertece ma
 
 * Cadastro! 🌟
 
-![login-cad](img/ca.png)
+![login-cad](img/cadas.png)
 
 # 🎉 linkedin
 
