@@ -14,6 +14,8 @@ Com a ajuda do meu professor, conseguimos criar um sistema fácil de usar e bast
 
 * Gerenciar seus dados: Veja todos os nomes cadastrados em uma lista organizada.
 
+* Excluir: função de excluir o nome da lista.
+
 * Além disso, incluí funcionalidades para adicionar novos nomes à lista e editar informações existentes. Se precisar atualizar algum nome, você pode facilmente selecionar o item da lista e fazer as alterações necessárias.
 
 ## 🔑 Login
