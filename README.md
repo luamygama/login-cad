@@ -34,6 +34,10 @@ A lista de registros permite que os usuários visualizem todos os nomes cadastra
 
 A funcionalidade de edição é particularmente útil para atualizar ou corrigir nomes já cadastrados. Os usuários podem selecionar um nome da lista e fazer alterações conforme necessário, garantindo que todas as informações estejam sempre corretas e atualizadas.
 
+## ❌ Excluir nomes.
+
+excluir nomes citado na lista caso houver algum erro, ou nome que nao pertece mais a lista.
+
 ## 💡 Funcionalidades Adicionais
 
 * Validação de Campos: Implementamos validações básicas para garantir que os campos de e-mail e senha estejam corretamente preenchidos antes do envio dos formulários. ✅
@@ -62,4 +66,4 @@ Este projeto será documentado no LinkedIn para compartilhar meu trabalho ❤️
 
 # *📝 Autoria:*
 
-Este projeto é uma criação 'Luamy Alves Gama' Obrigada pela Atenção!!!!
+Este projeto é uma criação 'Luamy Alves Gama' Obrigada pela Atenção!!!
