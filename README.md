@@ -48,11 +48,11 @@ A funcionalidade de edição é particularmente útil para atualizar ou corrigir
 
 * Login! 🌟
 
-![login-cad](img/login.png)
+![login-cad](img/lo.png)
 
 * Cadastro! 🌟
 
-![login-cad](img/cads.png)
+![login-cad](img/ca.png)
 
 # 🎉 linkedin
 
