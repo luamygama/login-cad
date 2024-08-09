@@ -11,36 +11,47 @@
 </head>
 <body>
     <style>
+        /* Define o estilo para o botão com a classe .btn-rosa */
         .btn-rosa {
-            color: #fff;
-            background-color: #ff69b4; /* Cor rosa */
-            border-color: #ff69b4; /* Cor da borda */
+            color: #fff; /* Cor do texto do botão (branco) */
+            background-color: #ff69b4; /* Cor de fundo do botão (rosa claro) */
+            border-color: #ff69b4; /* Cor da borda do botão (rosa claro) */
         }
         
+        /* Define o estilo para o botão quando o mouse passa sobre ele */
         .btn-rosa:hover {
-            background-color: #ff4f9d; /* Alteração da cor ao passar o mouse */
-            border-color: #ff4f9d; /* Alteração da cor da borda ao passar o mouse */
+            background-color: #ff4f9d; /* Cor de fundo do botão ao passar o mouse (rosa mais escuro) */
+            border-color: #ff4f9d; /* Cor da borda do botão ao passar o mouse (rosa mais escuro) */
         }
-        </style>
-
+    </style>
+</head>
+<body>
+    <!-- Container para o formulário de entrada do usuário -->
     <div class="container">
-        <label for="">Nome:</label>
-        <input type="text" id="nomeUser" class="form-control"><br>
+        <label for="nomeUser">Nome:</label> <!-- Rótulo para o campo de entrada -->
+        <input type="text" id="nomeUser" class="form-control" placeholder="Digite o nome"> <!-- Campo de entrada para o nome do usuário -->
+        <br>
+        <!-- Botão para salvar o usuário, chama a função salvarUser() ao ser clicado -->
         <button type="button" onclick="salvarUser()" class="btn-rosa">SALVAR</button>
     </div>
-<br>
+    <br>
+    <!-- Container para a tabela que exibe a lista de usuários -->
     <div class="container">
-        <table class="table table-striped" id="tabela">
-            <tr>
-                <th>Nome Usuario</th>
-                <th>Açoes</th>
-            </tr>
-
+        <table class="table table-striped" id="tabela"> <!-- Tabela com estilo listrado -->
+            <thead>
+                <tr>
+                    <!-- Cabeçalhos das colunas da tabela -->
+                    <th>Nome Usuario</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Corpo da tabela; pode ser preenchido dinamicamente com JavaScript -->
+            </tbody>
         </table>
-
     </div>
-    
 
-<script src="controller.js"></script>
+    <!-- Inclusão do script JavaScript externo; observe a correção do atributo 'src' -->
+    <script src="controller.js"></script>
 </body>
 </html>

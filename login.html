@@ -13,30 +13,36 @@
 <body>
 
     <style>
+        /* Define o estilo para o botão com a classe .btn-rosa */
         .btn-rosa {
-            color: #fff;
-            background-color: #ff69b4; /* Cor rosa */
-            border-color: #ff69b4; /* Cor da borda */
+            color: #fff; /* Cor do texto do botão */
+            background-color: #ff69b4; /* Cor de fundo do botão (rosa claro) */
+            border-color: #ff69b4; /* Cor da borda do botão (rosa claro) */
         }
         
+        /* Define o estilo para o botão quando o mouse passa sobre ele */
         .btn-rosa:hover {
-            background-color: #ff4f9d; /* Alteração da cor ao passar o mouse */
-            border-color: #ff4f9d; /* Alteração da cor da borda ao passar o mouse */
+            background-color: #ff4f9d; /* Cor de fundo do botão ao passar o mouse (rosa mais escuro) */
+            border-color: #ff4f9d; /* Cor da borda do botão ao passar o mouse (rosa mais escuro) */
         }
-        </style>
-    
+    </style>
+</head>
+<body>
+    <!-- Container para o formulário de login, com uma largura de 4 colunas (col-4) -->
     <div class="container col-4">
-        <h3>login</h3>
+        <h3>login</h3> <!-- Título da seção de login -->
         <form action="" class="form-control">
-            <input type="text" id="loginEmail" class="form-control"><br>
-            <input type="password" id="loginSenha" class="form-control">
+            <!-- Campo para o e-mail do usuário -->
+            <input type="text" id="loginEmail" class="form-control" placeholder="Email"><br>
+            <!-- Campo para a senha do usuário -->
+            <input type="password" id="loginSenha" class="form-control" placeholder="Senha">
+            <!-- Botão para submeter o formulário, com um evento onclick para chamar a função acessar() -->
             <button onclick="acessar()" class="btn-rosa" type="button">ACESSAR</button>
-
-    </form>
-
+        </form>
     </div>
 
-    <script scr="controller.js"></script>
-
+    <!-- Inclusão de um script JavaScript externo; note que há um erro no atributo 'scr' -->
+    <!-- O correto seria 'src' para especificar o caminho do arquivo JavaScript -->
+    <script src="controller.js"></script>
 </body>
 </html>
