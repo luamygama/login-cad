@@ -1,10 +1,10 @@
-# 🚀 Projeto de Login e Cadastro
+# 💌 Projeto de Login e Cadastro 💌
 
 ## Bem-vindo ao meu projeto de Login e Cadastro! 🌟
 
  Estou super empolgada para compartilhar essa atividade web que desenvolvi para facilitar o gerenciamento de logins e cadastros de usuários.
 
-Com a ajuda do meu professor, consegui criar um sistema fácil de usar e bastante eficiente. A ideia foi construir uma interface simples e prática, onde você pode:
+Com a ajuda do meu professor, conseguimos criar um sistema fácil de usar e bastante eficiente. A ideia foi construir uma interface simples e prática, onde você pode:
 
 ## 📝 Descrição
 
