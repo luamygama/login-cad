@@ -31,19 +31,25 @@
     <div class="container">
         <label for="nomeUser">Nome:</label> <!-- Rótulo para o campo de entrada -->
         <input type="text" id="nomeUser" class="form-control" placeholder="Digite o nome"> <!-- Campo de entrada para o nome do usuário -->
+        <input type="text" id="emailUser" class="form-control" placeholder="Digite o email ">
         <br>
         <!-- Botão para salvar o usuário, chama a função salvarUser() ao ser clicado -->
         <button type="button" onclick="salvarUser()" class="btn-rosa">SALVAR</button>
+      
+        
     </div>
     <br>
     <!-- Container para a tabela que exibe a lista de usuários -->
     <div class="container">
         <table class="table table-striped" id="tabela"> <!-- Tabela com estilo listrado -->
             <thead>
+
+                
                 <tr>
                     <!-- Cabeçalhos das colunas da tabela -->
                     <th>Nome Usuario</th>
                     <th>Ações</th>
+                    <th>Email</th>
                 </tr>
             </thead>
             <tbody>
