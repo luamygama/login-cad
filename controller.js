@@ -15,81 +15,82 @@ function acessar() {
     }
 }
 
-// Array que armazena a lista de nomes de usuários
+// Array que armazena a lista de nomes de usuários e emails
 var dadosLista = [];
 var EmailLista = [];
 
-// Função para salvar o nome do usuário na lista
+// Função para salvar o nome e email do usuário na lista
 function salvarUser() {
-    // Obtém o valor do campo de nome de usuário
+    // Obtém o valor dos campos de nome de usuário e email
     let nomeUser = document.getElementById("nomeUser").value;
     let emailUser = document.getElementById("emailUser").value;
 
-    // Verifica se o campo de nome não está vazio
+    // Verifica se os campos não estão vazios
     if (nomeUser && emailUser) {
-        // Adiciona o nome ao array de dadosLista
-        dadosLista.push(nomeUser && emailUser);
-        dadosLista.push(emailUser&& nomeUser);
+        // Adiciona o nome e email aos arrays
+        dadosLista.push(nomeUser);
+        EmailLista.push(emailUser);
         // Atualiza a lista exibida na tela
         criarLista();
-        // Limpa o campo de nome de usuário
+        // Limpa os campos de nome e email
         document.getElementById("nomeUser").value = "";
-        // Limpa o campo de nome de email
-        
+        document.getElementById("emailUser").value = "";
     } else {
-        // Se o campo estiver vazio, exibe um alerta
-        alert("Favor informa o nome cadastrado");
+        // Se algum campo estiver vazio, exibe um alerta
+        alert("Favor informar o nome e o email");
     }
 }
 
 // Função para criar e atualizar a lista de usuários na tela
 function criarLista() {
     // Cria o cabeçalho da tabela
-    let tabela = "<tr><th> Nome Usuário</th><th>Email</th><th>Ações</th></tr>";
-    
+    let tabela = "<tr><th>Nome Usuário</th><th>Email</th><th>Ações</th></tr>";
 
-    // Itera sobre todos os nomes na lista de dados
-    for (let i = 0; i <= (dadosLista.length - 1); i++) {
-        // Adiciona uma nova linha para cada nome com um botão de editar
-        tabela += "<tr><td>" + dadosLista[i] +  EmailLista[i] + "</td><td><button type='button' onclick='editar(this.parentNode.parentNode.rowIndex)' class='btn-rosa'>Editar</button><button type='button' onclick='excluir(this.parentNode.parentNode.rowIndex)' class='btn-rosa'>excluir</button></td></tr>";
+    // Itera sobre todos os nomes e emails na lista
+    for (let i = 0; i < dadosLista.length; i++) {
+        tabela += "<tr><td>" + dadosLista[i] + "</td><td>" + EmailLista[i] + "</td><td><button type='button' onclick='editar(" + i + ")' class='btn-rosa'>Editar</button><button type='button' onclick='excluir(" + i + ")' class='btn-rosa'>Excluir</button></td></tr>";
     }
 
     // Atualiza o conteúdo da tabela com a nova lista
     document.getElementById("tabela").innerHTML = tabela;
 }
 
-// Função para editar um nome na lista
+// Função para editar um nome e email na lista
 function editar(i) {
-    // Preenche o campo de nome com o nome selecionado para edição
-    document.getElementById('nomeUser').value = dadosLista[i - 1];
-    // seleciona para a edição 
-    dadosLista.splice(i - 1, 1);
+    // Preenche os campos com o nome e email selecionados para edição
+    document.getElementById('nomeUser').value = dadosLista[i];
+    document.getElementById('emailUser').value = EmailLista[i];
+    // Remove o item da lista de dados e email
+    dadosLista.splice(i, 1);
+    EmailLista.splice(i, 1);
     // Atualiza a lista exibida na tela após a remoção
     criarLista();
-} 
+}
 
-// Função para excluir um nome na lista
-    function excluir(i) {
-        dadosLista.splice((i -1), 1);
-        document.getElementById("tabela").deleteRow(i);
-    }
-    // Função para validar o email
+// Função para excluir um nome e email na lista
+function excluir(i) {
+    // Remove o item da lista de dados e email
+    dadosLista.splice(i, 1);
+    EmailLista.splice(i, 1);
+    // Atualiza a lista exibida na tela após a remoção
+    criarLista();
+}
+
+// Função para validar o email
 function checarEmail() {
+    // Obtém o valor do campo de email
+    let email = document.forms[0].email.value;
+
     // Verifica se o campo de email está vazio ou não contém '@' ou '.'
-    if (document.forms[0].email.value == "" ||
-        document.forms[0].email.value.indexOf('@') == -1 ||
-        document.forms[0].email.value.indexOf('.') == -1) {
-        
+    if (email === "" || email.indexOf('@') === -1 || email.indexOf('.') === -1) {
         // Se alguma das condições acima for verdadeira, exibe um alerta
         alert("Por favor, informe um e-mail válido");
-        
         // Retorna false para evitar o envio do formulário
         return false;
     } else {
         // Se o email é válido, exibe um alerta de sucesso
         alert("Email informado com sucesso");
-        
         // Atualiza o conteúdo de um elemento com o valor do email inserido
-        document.getElementById('email').innerHTML = document.forms[0].email.value;
+        document.getElementById('email').innerHTML = email;
     }
 }
