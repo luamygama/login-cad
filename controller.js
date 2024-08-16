@@ -72,7 +72,7 @@ function excluir(i) {
     // Remove o item da lista de dados e email
     dadosLista.splice(i, 1);
     EmailLista.splice(i, 1);
-    // Atualiza a lista exibida na tela após a remoção
+    // Atualza a lista exibida na tela após a remoção
     criarLista();
 }
 
