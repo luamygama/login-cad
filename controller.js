@@ -5,12 +5,9 @@ function acessar() {
     let loginEmail = document.getElementById("loginEmail").value;
     let loginSenha = document.getElementById("loginSenha").value;
 
-    // Verifica se os campos estão preenchidos
-    if (!loginEmail || !loginSenha) {
-        // Se algum campo estiver vazio, exibe um alerta
+    if (!loginEmail || !loginSenha || !logincpf) {
         alert("Favor preencher todos os campos");
     } else {
-        // Se ambos os campos estiverem preenchidos, redireciona para a página de cadastro
         window.location.href = "cadastro.html";
     }
 }
@@ -27,33 +24,30 @@ function salvarUser() {
     let emailUser = document.getElementById("emailUser").value;
     let cpfUser = document.getElementById("cpfUser").value;
 
-    // Verifica se os campos não estão vazios
-    if (nomeUser && emailUser && cpfUser ) {
-        // Adiciona o nome e email aos arrays
+    if (nomeUser && emailUser && cpfUser) {
         dadosLista.push(nomeUser);
         EmailLista.push(emailUser);
-        cpfLista.push(cpflUser);
-        // Atualiza a lista exibida na tela
-        criarLista();
-        // Limpa os campos de nome e email
+        cpfLista.push(cpfUser);
+        criarLista(); // Atualiza a lista exibida na tela
         document.getElementById("nomeUser").value = "";
         document.getElementById("emailUser").value = "";
-        document.getElementById("cpflUser").value = "";
+        document.getElementById("cpfUser").value = "";
     } else {
-        // Se algum campo estiver vazio, exibe um alerta
-        alert("Favor informar o nome e o email");
-        alert("Favor informar o nome e o CPF");
+        alert("Favor preencher todos os campos.");
     }
+    
 }
 
 // Função para criar e atualizar a lista de usuários na tela
 function criarLista() {
     // Cria o cabeçalho da tabela
-    let tabela = "<tr><th>Nome Usuário</th><th>Email</th><th>Ações</th><th>CPF</th></tr>";
+    let tabela = "<tr><th>Nome Usuário</th><th>Email</th><th>CPF</th><th>Ações</th></tr>";
 
     // Itera sobre todos os nomes e emails na lista
     for (let i = 0; i < dadosLista.length; i++) {
-        tabela += "<tr><td>" + dadosLista[i] + "</td><td>" + EmailLista[i] + "</td><td><button type='button' onclick='editar(" + i + ")' class='btn-rosa'>Editar</button><button type='button' onclick='excluir(" + i + ")' class='btn-rosa'>Excluir</button></td></tr>";
+        tabela += "<tr><td>" + dadosLista[i] + "</td><td>" + EmailLista[i] + "</td><td>" + cpfLista[i] + "</td>" +
+                  "<td><button type='button' onclick='editar(" + i + ")' class='btn-rosa'>Editar</button>" +
+                  "<button type='button' onclick='excluir(" + i + ")' class='btn-rosa'>Excluir</button></td></tr>";
     }
 
     // Atualiza o conteúdo da tabela com a nova lista
@@ -65,12 +59,10 @@ function editar(i) {
     // Preenche os campos com o nome e email selecionados para edição
     document.getElementById('nomeUser').value = dadosLista[i];
     document.getElementById('emailUser').value = EmailLista[i];
-    document.getElementById('cpflUser').value = cpflLista[i];
-    // Remove o item da lista de dados e email
+    document.getElementById('cpfUser').value = cpfLista[i];
     dadosLista.splice(i, 1);
     EmailLista.splice(i, 1);
-    cpflLista.splice(i, 1);
-    // Atualiza a lista exibida na tela após a remoção
+    cpfLista.splice(i, 1);
     criarLista();
 }
 
@@ -79,14 +71,11 @@ function excluir(i) {
     // Remove o item da lista de dados e email
     dadosLista.splice(i, 1);
     EmailLista.splice(i, 1);
-    cpflLista.splice(i, 1);
-    // Atualza a lista exibida na tela após a remoção
+    cpfLista.splice(i, 1);
     criarLista();
 }
 
-// Função para validar o email
-function checarEmail() {
-    // Obtém o valor do campo de email
+function validarEmail() {
     let email = document.forms[0].email.value;
 
     // Verifica se o campo de email está vazio ou não contém '@' ou '.'
@@ -122,6 +111,26 @@ function dadosLista() {
         document.getElementById('email').innerHTML = document.forms[0].email.value;
     }
 }
+// Adiciona um event listener para o evento 'submit' do formulário com ID 'cpfForm'
+document.getElementById('cpfForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Previne o comportamento padrão de submit do formulário
+    
+    // Obtém o valor do campo de CPF
+    const cpf = document.getElementById("cpf").value;
+    
+    // Elemento onde será exibida a mensagem de validação
+    const msg = document.getElementById("message");
+ 
+    // Chama a função validarCPF e verifica se o CPF é válido
+    if (validarCPF(cpf)) {
+        msg.textContent = "O CPF é válido"; // Mensagem de CPF válido
+        msg.style.color = 'green'; // Estilo para mensagem de sucesso
+    } else {
+        msg.textContent = "O CPF não é válido"; // Mensagem de CPF inválido
+        msg.style.color = 'red'; // Estilo para mensagem de erro
+    }
+ });
+ 
 // Adiciona um event listener para o evento 'submit' do formulário com ID 'cpfForm'
 document.getElementById('cpfForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Previne o comportamento padrão de submit do formulário
