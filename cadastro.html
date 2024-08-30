@@ -7,10 +7,7 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src='main.js'></script>
-</head>
-<body>
-    
+    <script src='controller.js' defer></script> <!-- Inclua o script com defer -->
     <style>
         /* Define o estilo para o botão com a classe .btn-rosa */
         .btn-rosa {
@@ -24,37 +21,35 @@
             background-color: #ff4f9d; /* Cor de fundo do botão ao passar o mouse (rosa mais escuro) */
             border-color: #ff4f9d; /* Cor da borda do botão ao passar o mouse (rosa mais escuro) */
         }
-    
     </style>
 </head>
 <body>
     <!-- Container para o formulário de entrada do usuário -->
     <div class="container">
-        <label for="nomeUser">Nome:</label> <!-- Rótulo para o campo de entrada -->
-        <input type="text" id="nomeUser" class="form-control" placeholder="Digite o nome"><br> <!-- Campo de entrada para o nome do usuário -->
-        <input type="text" id="emailUser" class="form-control" placeholder="Digite o email "><br>
-        <input type="text" id="cpfUser" class="form-control" placeholder="Digite o CPF "><br>
+        <label for="nomeUser">Nome:</label>
+        <input type="text" id="nomeUser" class="form-control" placeholder="Digite o nome"><br>
+        <input type="text" id="emailUser" class="form-control" placeholder="Digite o email"><br>
+        <input type="text" id="cpfUser" class="form-control" placeholder="Digite o CPF"><br>
         <br>
-        <!-- Botão para salvar o usuário, chama a função salvarUser() ao ser clicado -->
         <button type="button" onclick="salvarUser()" class="btn-rosa">SALVAR</button>
     </div>
     <br>
     <!-- Container para a tabela que exibe a lista de usuários -->
     <div class="container">
-        <table class="table table-striped" id="tabela"> <!-- Tabela com estilo listrado -->
+        <table class="table table-striped" id="tabela">
+            <thead>
                 <tr>
-                    <!-- Cabeçalhos das colunas da tabela -->
-                    <th>Nome Usuario</th>
+                    <th>Nome Usuário</th>
                     <th>Email</th>
                     <th>CPF</th>
                     <th>Ações</th>
                 </tr>
+            </thead>
+            <tbody>
+                <!-- As linhas da tabela serão adicionadas aqui pelo JavaScript -->
+            </tbody>
         </table>
     </div>
-
-    <!-- Inclusão do script JavaScript externo; observe a correção do atributo 'src' -->
-    <script src="controller.js"></script>
 </body>
 </html>
-
 
