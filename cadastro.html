@@ -31,22 +31,17 @@
     <!-- Container para o formulário de entrada do usuário -->
     <div class="container">
         <label for="nomeUser">Nome:</label> <!-- Rótulo para o campo de entrada -->
-        <input type="text" id="nomeUser" class="form-control" placeholder="Digite o nome"> <!-- Campo de entrada para o nome do usuário -->
-        <input type="text" id="emailUser" class="form-control" placeholder="Digite o email ">
-        <input type="text" id="cpfUser" class="form-control" placeholder="Digite o CPF ">
+        <input type="text" id="nomeUser" class="form-control" placeholder="Digite o nome"><br> <!-- Campo de entrada para o nome do usuário -->
+        <input type="text" id="emailUser" class="form-control" placeholder="Digite o email "><br>
+        <input type="text" id="cpfUser" class="form-control" placeholder="Digite o CPF "><br>
         <br>
         <!-- Botão para salvar o usuário, chama a função salvarUser() ao ser clicado -->
         <button type="button" onclick="salvarUser()" class="btn-rosa">SALVAR</button>
-      
-        
     </div>
     <br>
     <!-- Container para a tabela que exibe a lista de usuários -->
     <div class="container">
         <table class="table table-striped" id="tabela"> <!-- Tabela com estilo listrado -->
-            <thead>
-
-                
                 <tr>
                     <!-- Cabeçalhos das colunas da tabela -->
                     <th>Nome Usuario</th>
@@ -54,14 +49,8 @@
                     <th>CPF</th>
                     <th>Ações</th>
                 </tr>
-            </thead>
-            <tbody>
-                <!-- Corpo da tabela; pode ser preenchido dinamicamente com JavaScript -->
-
-            </tbody>
         </table>
     </div>
-    
 
     <!-- Inclusão do script JavaScript externo; observe a correção do atributo 'src' -->
     <script src="controller.js"></script>
