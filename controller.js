@@ -21,7 +21,7 @@ function salvarUser() {
     let emailUser = document.getElementById("emailUser").value;
     let cpfUser = document.getElementById("cpfUser").value;
 
-    if (nomeUser && emailUser && validarCPF(cpfUser)) {
+    if (nomeUser && validarEmail(emailUser) && validarCPF(cpfUser)) {
         dadosLista.push(nomeUser);
         EmailLista.push(emailUser);
         cpfLista.push(cpfUser);
@@ -68,27 +68,52 @@ function excluir(i) {
 }
 
 // Função para validar o e-mail
-function validarEmail() {
-    let email = document.getElementById("emailUser").value;
+function validarEmail(email) {
     let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
     if (!regex.test(email)) {
         alert("Por favor, informe um e-mail válido");
         return false;
-    } else {
-        alert("Email informado com sucesso");
-        return true;
     }
+    return true;
 }
 
 // Função para validar o CPF
 function validarCPF(cpf) {
-    let regex = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
-    if (!regex.test(cpf)) {
+    cpf = cpf.replace(/\D/g, ''); // Remove caracteres não numéricos
+
+    if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) {
         alert("CPF inválido. Utilize o formato XXX.XXX.XXX-XX");
         return false;
-    } else {
-        alert("CPF válido");
-        return true;
     }
+
+    // Validação do 1º dígito verificador
+    let soma = 0;
+    let resto;
+    for (let i = 1; i <= 9; i++) {
+        soma += parseInt(cpf.charAt(i - 1)) * (11 - i);
+    }
+    resto = (soma * 10) % 11;
+    if (resto === 10 || resto === 11) {
+        resto = 0;
+    }
+    if (resto !== parseInt(cpf.charAt(9))) {
+        alert("CPF inválido.");
+        return false;
+    }
+
+    // Validação do 2º dígito verificador
+    soma = 0;
+    for (let i = 1; i <= 10; i++) {
+        soma += parseInt(cpf.charAt(i - 1)) * (12 - i);
+    }
+    resto = (soma * 10) % 11;
+    if (resto === 10 || resto === 11) {
+        resto = 0;
+    }
+    if (resto !== parseInt(cpf.charAt(10))) {
+        alert("CPF inválido.");
+        return false;
+    }
+
+    return true;
 }
