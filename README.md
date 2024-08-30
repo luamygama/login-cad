@@ -52,11 +52,11 @@ Permite remover nomes da lista em caso de erro ou quando um nome não pertence m
 
 * **Tela de Login:** 🌟
 
-![Tela de Login](img/lo.png)
+![Tela de Login](img/login.png)
 
 * **Tela de Cadastro:** 🌟
 
-![Tela de Cadastro](img/novo.cadas.png)
+![Tela de Cadastro](img/cadastro.png)
 
 ## 🔗 Conecte-se
 
