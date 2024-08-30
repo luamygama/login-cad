@@ -1,49 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src='controller.js'></script>
-</head>
-<body>
-    
-
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <style>
-        /* Define o estilo para o botão com a classe .btn-rosa */
         .btn-rosa {
-            color: #fff; /* Cor do texto do botão */
-            background-color: #ff69b4; /* Cor de fundo do botão (rosa claro) */
-            border-color: #ff69b4; /* Cor da borda do botão (rosa claro) */
+            color: #fff;
+            background-color: #ff69b4;
+            border-color: #ff69b4;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-weight: bold;
+            transition: all 0.3s;
         }
-        
-        /* Define o estilo para o botão quando o mouse passa sobre ele */
+
         .btn-rosa:hover {
-            background-color: #ff4f9d; /* Cor de fundo do botão ao passar o mouse (rosa mais escuro) */
-            border-color: #ff4f9d; /* Cor da borda do botão ao passar o mouse (rosa mais escuro) */
+            background-color: #ff4f9d;
+            border-color: #ff4f9d;
+        }
+
+        .container {
+            max-width: 400px;
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-control {
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+        }
+
+        .form-control:focus {
+            border-color: #ff69b4;
+            box-shadow: 0 0 0 0.2rem rgba(255, 105, 180, 0.25);
         }
     </style>
 </head>
 <body>
-    <!-- Container para o formulário de login, com uma largura de 4 colunas (col-4) -->
-    <div class="container col-4">
-        <h3>login</h3> <!-- Título da seção de login -->
-        <form action="" class="form-control">
-            <!-- Campo para o e-mail do usuário -->
-            <input type="text" id="loginEmail" class="form-control" placeholder="Email"><br>
-            <!-- Campo para a senha do usuário -->
-            <input type="password" id="loginSenha" class="form-control" placeholder="Senha">
-            <!-- Botão para submeter o formulário, com um evento onclick para chamar a função acessar() -->
-            <button onclick="acessar()" class="btn-rosa" type="button">ACESSAR</button>
+    <div class="container">
+        <h3 class="text-center">Login</h3>
+        <form>
+            <input type="text" id="loginEmail" class="form-control mb-3" placeholder="Email">
+            <input type="password" id="loginSenha" class="form-control mb-3" placeholder="Senha">
+            <button type="button" onclick="acessar()" class="btn-rosa w-100">Acessar</button>
         </form>
     </div>
-
-    <!-- Inclusão de um script JavaScript externo; note que há um erro no atributo 'scr' -->
-    <!-- O correto seria 'src' para especificar o caminho do arquivo JavaScript -->
-    <script src="controller.js"></script>
+    <script src="controller.js" defer></script>
 </body>
 </html>
