@@ -1,22 +1,21 @@
 # 💌 Projeto de Login e Cadastro 💌
 
-## Bem-vindo ao meu projeto de Login e Cadastro! 🌟
+Bem-vindo ao meu projeto de Login e Cadastro! 🌟
 
- Estou super empolgada para compartilhar essa atividade web que desenvolvi para facilitar o gerenciamento de logins e cadastros de usuários.
+Estou super empolgada para compartilhar essa atividade web que desenvolvi para facilitar o gerenciamento de logins e cadastros de usuários, incluindo validação de CPF e e-mail.
 
 Com a ajuda do meu professor, conseguimos criar um sistema fácil de usar e bastante eficiente. A ideia foi construir uma interface simples e prática, onde você pode:
 
 ## 📝 Descrição
 
-* Se registrar: Adicione seu nome e informações pessoais à lista.
+* **Registrar-se:** Adicione seu nome, e-mail e CPF à lista.
+* **Fazer login:** Acesse a aplicação com seu e-mail e senha.
+* **Validação do CPF:** Adicione seu CPF para garantir a complexidade dos dados.
+* **Gerenciar dados:** Visualize todos os registros em uma lista organizada.
+* **Excluir:** Remova nomes da lista quando não forem mais necessários.
+* **Editar:** Altere informações na lista sem precisar excluir.
 
-* Fazer login: Acesse a aplicação com seu e-mail e senha.
-
-* Gerenciar seus dados: Veja todos os nomes cadastrados em uma lista organizada.
-
-* Excluir: função de excluir o nome da lista.
-
-* Além disso, incluí funcionalidades para adicionar novos nomes à lista e editar informações existentes. Se precisar atualizar algum nome, você pode facilmente selecionar o item da lista e fazer as alterações necessárias.
+Além disso, incluí funcionalidades para adicionar novos nomes e editar informações existentes. Se precisar atualizar algum nome, você pode facilmente selecionar o item da lista e fazer as alterações necessárias.
 
 ## 🔑 Login
 
@@ -34,36 +33,37 @@ A lista de registros permite que os usuários visualizem todos os nomes cadastra
 
 A funcionalidade de edição é particularmente útil para atualizar ou corrigir nomes já cadastrados. Os usuários podem selecionar um nome da lista e fazer alterações conforme necessário, garantindo que todas as informações estejam sempre corretas e atualizadas.
 
-## ❌ Excluir nomes.
+## ❌ Exclusão de Nomes
 
-excluir nomes citado na lista caso houver algum erro, ou nome que nao pertece mais a lista.
+Permite remover nomes da lista em caso de erro ou quando um nome não pertence mais à lista.
 
 ## 💡 Funcionalidades Adicionais
 
-* Validação de Campos: Implementamos validações básicas para garantir que os campos de e-mail e senha estejam corretamente preenchidos antes do envio dos formulários. ✅
+* **Validação de Campos:** Implementamos validações básicas para garantir que os campos de e-mail, senha e CPF estejam corretamente preenchidos antes do envio dos formulários. ✅
+* **Validação de CPF:** Função para validar o CPF, alertando o usuário caso o CPF seja inválido. 📋
+* **Armazenamento Dinâmico:** Utilizamos JavaScript para atualizar dinamicamente a lista de nomes cadastrados, permitindo que os dados sejam exibidos e editados sem a necessidade de recarregar a página. 🔄
 
-* Armazenamento Dinâmico: Utilizamos JavaScript para atualizar dinamicamente a lista de nomes cadastrados, permitindo que os dados sejam exibidos e editados sem a necessidade de recarregar a página. 🔄
+## 🧩 Tecnologias Utilizadas
 
-## 🧩 Linguagens ultilizadas
+* **HTML:** Utilizado para criar a estrutura das páginas de login e cadastro.
+* **JavaScript:** Empregado para a lógica de autenticação, validação de formulários e gerenciamento de dados.
 
-> HTML: Utilizado para criar a estrutura das páginas de login e cadastro. 
+## 🎉 Visualizações do Projeto
 
-> JavaScript: Empregado para a lógica de autenticação, validação de formulários e gerenciamento de dados. 
+* **Tela de Login:** 🌟
 
-# ❤️ veja a ilustração do meu projeto!
+![Tela de Login](img/lo.png)
 
-* Login! 🌟
+* **Tela de Cadastro:** 🌟
 
-![login-cad](img/lo.png)
+![Tela de Cadastro](img/novo.cadas.png)
 
-* Cadastro! 🌟
+## 🔗 Conecte-se
 
-![login-cad](img/cadas.png)
+Este projeto será documentado no LinkedIn para compartilhar meu trabalho. ❤️
 
-# 🎉 linkedin
 
-Este projeto será documentado no LinkedIn para compartilhar meu trabalho ❤️.
 
-# *📝 Autoria:*
+## 📝 Autoria
 
-Este projeto é uma criação 'Luamy Alves Gama' Obrigada pela Atenção!!!
+Este projeto é uma criação de **Luamy Alves Gama**. Obrigada pela Atenção!
